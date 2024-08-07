@@ -1,0 +1,24 @@
+rule rule_Huginn_AD_CS_ESC4 {
+    meta:
+        author = "Rohan Durve / Paul Laine"
+        severity = "Critical"
+        priority = "High"
+        mitre_attack_tactic = "Credential Access"
+        mitre_attack_technique = "Steal or Forge Authentication Certificates"
+        mitre_attack_technique_id = "T1649"
+        summary = "[Huginn] A deception asset PKI Certificate Template was triggered."
+
+    events:
+        $e.metadata.product_name = "Microsoft-Windows-Security-Auditing" AND
+        $e.target.resource.name = "<TEMPLATE NAME>" AND
+        (
+            $e.metadata.product_event_type = "4899" OR
+            $e.metadata.product_event_type = "4898"
+        )
+
+    outcome:
+        $risk_score = max(99)
+
+    condition:
+        $e
+}

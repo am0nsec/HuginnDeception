@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Huginn (Remote Debugging)": {
+      "commandName": "Project",
+      "commandLineArgs": "krb-delegation --computername \"deceptionasset1.alpha.lab\" --computerobject \"deceptionasset1\" --principal \"Something4 Account\" --technique ResourceBased",
+      "remoteDebugEnabled": true,
+      "authenticationMode": "Windows",
+      "remoteDebugMachine": "35.214.34.124:4026",
+      "nativeDebugging": true
+    }
+  }
+}
