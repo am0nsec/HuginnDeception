@@ -8,10 +8,6 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="powershell -ExecutionPolicy Bypass $(ProjectDir)..\post-build.ps1 -Target $(TargetPath) " />
-  </Target>
-
   <ItemGroup>
     <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
     <PackageReference Include="System.DirectoryServices" Version="8.0.0" />
